@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#190b25">
+<title>Happy Birthday, Ponnu 💗</title>
+<style>
+:root{--pink:#ff79b8;--rose:#ffb6d5;--cream:#fff4fa;--night:#190b25;--purple:#4c245d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--cream);background:radial-gradient(ellipse at top,#51214e 0%,#25102f 42%,#100817 100%);min-height:100vh;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.stars,.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.7;animation:twinkle 2.5s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.5)}}
+.float-heart{position:absolute;bottom:-35px;animation:floatUp linear forwards;opacity:.7}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+main{position:relative;z-index:1;max-width:760px;margin:auto;padding:24px 16px 70px}
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.75rem;color:#ffc4df}
+h1{font-size:clamp(2.8rem,12vw,5.8rem);line-height:.98;margin:14px 0;color:#fff;text-shadow:0 0 28px #ff78b766}
+h1 span{display:block;color:var(--rose);font-family:Georgia,serif;font-style:italic;font-weight:500}
+.subtitle{max-width:480px;line-height:1.7;color:#f7dce9}
+.cake{font-size:clamp(5rem,22vw,8rem);filter:drop-shadow(0 0 24px #ff87c555);animation:bob 2.7s ease-in-out infinite;margin:16px 0}
+@keyframes bob{50%{transform:translateY(-9px) rotate(2deg)}}
+.btn{border:0;border-radius:999px;padding:14px 23px;background:linear-gradient(135deg,#ff9bc9,#ff5ba9);color:#39102c;font-weight:750;box-shadow:0 8px 28px #ff5ba933;transition:transform .2s}
+.btn:active{transform:scale(.97)}
+.btn.secondary{background:#ffffff12;border:1px solid #ffffff38;color:#fff;margin-top:10px;box-shadow:none}
+section{margin:24px 0;padding:clamp(22px,6vw,36px);border:1px solid #ffffff20;border-radius:26px;background:linear-gradient(145deg,#ffffff12,#ffffff06);box-shadow:0 18px 50px #00000018;backdrop-filter:blur(10px)}
+.section-tag{color:#ffafd2;text-transform:uppercase;letter-spacing:.16em;font-size:.72rem}
+h2{font-size:clamp(1.65rem,6vw,2.35rem);margin:9px 0 14px}
+p{line-height:1.85;color:#f9e7f0}
+.hidden{display:none}
+.letter{white-space:pre-line;border-left:2px solid var(--pink);padding-left:18px;color:#fff0f7}
+.photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.photo-slot{min-height:145px;border:1px dashed #ffb6d577;border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:#f6cadd;background:#ffffff08;overflow:hidden}
+.photo-slot img{width:100%;height:100%;min-height:145px;object-fit:cover;border-radius:14px}
+input[type=file]{max-width:100%;font-size:.82rem;margin-top:10px;color:#fce7f1}
+.footer{text-align:center;padding:30px 10px;color:#eabbd1;font-size:.9rem}
+.tiny{font-size:.83rem;color:#e6c3d5}
+#toast{position:fixed;z-index:5;bottom:20px;left:50%;transform:translateX(-50%);background:#fff0f7;color:#421b36;border-radius:20px;padding:12px 18px;display:none;max-width:90vw;text-align:center}
+@media(max-width:420px){.photo-grid{grid-template-columns:1fr}.photo-slot{min-height:125px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div><div class="hearts" id="hearts"></div>
+<main>
+  <header class="hero">
+    <div class="eyebrow">A little midnight surprise, made just for you</div>
+    <div class="cake" aria-label="birthday cake">🎂</div>
+    <h1>Happy Birthday <span>Shifa</span></h1>
+    <p class="subtitle">To my Ponnu 💗 — tonight, this little corner of the internet is all yours.</p>
+    <button class="btn" onclick="document.getElementById('letter-section').scrollIntoView({behavior:'smooth'})">Open your surprise 💌</button>
+    <p class="tiny">Made with love, just for you ✨</p>
+  </header>
+
+  <section id="letter-section">
+    <div class="section-tag">A little note from me</div>
+    <h2>For my Ponnu 💕</h2>
+    <p>There are a million things I could say today, but the most important one is this: I’m so happy that you’re here, and I hope this new year of your life brings you peace, laughter, beautiful memories, and all the little things that make you smile.</p>
+    <div id="letter" class="letter hidden">Happy Birthday, Shifa — ente Ponnu ❤️
+
+Ninte special day-il ninakku orupadu santhoshavum chiriyum nalla ormakalum undaavatte. Ninte face-il ulla aa smile eppozhum angane thanne nilanilkkanam.
+
+Ninakku parayan orupadu karyangal undenkilum, innu oru karyam mathram: you are special, and you deserve so much happiness. 💗
+
+Happy Birthday, Ponnu. Have the sweetest day ever! 🎂✨</div>
+    <button class="btn" id="letter-btn" onclick="toggleLetter()">Read your little letter 💌</button>
+  </section>
+
+  <section>
+    <div class="section-tag">A wish for your new year</div>
+    <h2>Make a wish, birthday girl 🌙</h2>
+    <p>Close your eyes for a second, make your sweetest wish, and tap below. May this year bring you more reasons to laugh, more dreams to chase, and more moments that feel like magic.</p>
+    <button class="btn" onclick="wish()">I made a wish ✨</button>
+    <p id="wish-message" class="hidden">✨ Wish sent to the universe! May beautiful things find you, Shifa. 💗</p>
+  </section>
+
+  <section>
+    <div class="section-tag">Our little memory corner</div>
+    <h2>Photos & memories 📸</h2>
+    <p class="tiny">You can add your photos here on your own phone to preview them. These photo previews are not uploaded or saved to the website automatically; to show them to Shifa online, add the image files to the website folder and update the HTML.</p>
+    <div class="photo-grid">
+      <div class="photo-slot" id="slot1">Our favourite memory 💞</div>
+      <div class="photo-slot" id="slot2">A smile I love 🌷</div>
+    </div>
+    <label class="tiny" for="photos">Preview photos on this device:</label><br>
+    <input id="photos" type="file" accept="image/*" multiple onchange="previewPhotos(event)">
+  </section>
+
+  <section style="text-align:center">
+    <div class="section-tag">One last thing</div>
+    <h2>Today is all about you, Ponnu 💖</h2>
+    <p>May your day be as lovely as your heart. Keep smiling, keep dreaming, and never forget how special you are.</p>
+    <div style="font-size:2rem;margin:14px">💗 🌷 🎂 ✨ 💗</div>
+    <button class="btn" onclick="copyWish()">Copy your birthday wish 💌</button>
+  </section>
+  <footer class="footer">Made with love for Shifa · from someone who calls you Ponnu 💗</footer>
+</main>
+<div id="toast" role="status"></div>
+<script>
+const starBox=document.getElementById('stars');
+for(let i=0;i<75;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.animationDuration=(1.5+Math.random()*2)+'s';starBox.appendChild(s)}
+function addHeart(){const h=document.createElement('span');h.className='float-heart';h.textContent=['💗','💕','♡','✨','💖'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'%';h.style.fontSize=(14+Math.random()*20)+'px';h.style.animationDuration=(7+Math.random()*7)+'s';document.getElementById('hearts').appendChild(h);setTimeout(()=>h.remove(),15000)}
+setInterval(addHeart,850);
+function toggleLetter(){const el=document.getElementById('letter');el.classList.toggle('hidden');document.getElementById('letter-btn').textContent=el.classList.contains('hidden')?'Read your little letter 💌':'Hide letter 💗'}
+function wish(){document.getElementById('wish-message').classList.remove('hidden');for(let i=0;i<16;i++)setTimeout(addHeart,i*100)}
+function previewPhotos(e){const files=[...e.target.files].slice(0,2);files.forEach((file,i)=>{const reader=new FileReader();reader.onload=ev=>{const slot=document.getElementById('slot'+(i+1));slot.textContent='';const img=document.createElement('img');img.src=ev.target.result;img.alt='Birthday memory';slot.appendChild(img)};reader.readAsDataURL(file)})}
+function copyWish(){const text='Happy Birthday, Shifa — ente Ponnu ❤️ May your day be full of love, laughter, beautiful memories and all the happiness you deserve. Have the sweetest birthday ever! 🎂💗';if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(()=>showToast('Birthday wish copied 💗')).catch(()=>showToast(text))}else{showToast(text)}}
+function showToast(t){const el=document.getElementById('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',4500)}
+</script>
+</body>
+</html>
